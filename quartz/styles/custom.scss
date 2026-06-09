@@ -1,3 +1,518 @@
-@use "./variables.scss" as *;
 
-// put your custom CSS here!
+/* === Rod Archive clean design === */
+
+:root {
+  --light: #ffffff !important;
+  --lightgray: #f6f7f9 !important;
+  --gray: #6b7280 !important;
+  --darkgray: #374151 !important;
+  --dark: #111827 !important;
+  --secondary: #2563eb !important;
+  --tertiary: #e5e7eb !important;
+  --highlight: rgba(37, 99, 235, 0.08) !important;
+}
+
+html,
+body {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif !important;
+}
+
+/* Убираем правую техничную колонку */
+.sidebar.right,
+.right.sidebar,
+.graph,
+.backlinks {
+  display: none !important;
+}
+
+/* Расширяем основную область */
+.page {
+  max-width: 1280px !important;
+}
+
+.center,
+.center > article,
+article {
+  max-width: 860px !important;
+}
+
+/* Левая навигация */
+.sidebar.left,
+.left.sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #e5e7eb !important;
+  padding-right: 1.2rem !important;
+}
+
+.page-title,
+.page-title a {
+  color: #111827 !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.2 !important;
+}
+
+.page-title a::before {
+  content: "Родовой архив";
+}
+
+.page-title a {
+  font-size: 0 !important;
+}
+
+.page-title a::before {
+  font-size: 1.15rem !important;
+}
+
+/* Explorer */
+.explorer {
+  font-size: 0.92rem !important;
+}
+
+.explorer h1,
+.explorer .explorer-title {
+  color: #111827 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+
+.explorer a,
+.explorer button {
+  color: #111827 !important;
+}
+
+.explorer a:hover,
+.explorer button:hover {
+  color: #2563eb !important;
+  background: #f6f7f9 !important;
+  border-radius: 8px !important;
+}
+
+/* Ссылки */
+a {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+/* Контент */
+article {
+  font-size: 1.02rem !important;
+  line-height: 1.72 !important;
+}
+
+article h1 {
+  font-size: 2.2rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 1rem !important;
+}
+
+article h2 {
+  font-size: 1.45rem !important;
+  margin-top: 2rem !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 0.35rem !important;
+}
+
+article h3 {
+  font-size: 1.15rem !important;
+  margin-top: 1.5rem !important;
+}
+
+article p {
+  margin: 0.8rem 0 !important;
+}
+
+/* Убираем лишнюю техничность */
+footer,
+footer * {
+  color: #9ca3af !important;
+  font-size: 0.78rem !important;
+}
+
+footer a[href*="quartz"],
+footer a[href*="github"],
+footer a[href*="discord"] {
+  display: none !important;
+}
+
+/* Карточки изображений */
+.archive-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 18px !important;
+  margin-top: 1.5rem !important;
+}
+
+.archive-card {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 14px !important;
+  padding: 10px !important;
+  background: #ffffff !important;
+}
+
+.archive-card img {
+  width: 100% !important;
+  height: 170px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  display: block !important;
+}
+
+.archive-card p {
+  font-size: 0.88rem !important;
+  line-height: 1.35 !important;
+  color: #374151 !important;
+  margin: 0.55rem 0 0 !important;
+}
+
+/* Служебные даты делаем менее заметными */
+.content-meta,
+p.content-meta {
+  color: #9ca3af !important;
+  font-size: 0.86rem !important;
+}
+
+
+/* ===== Финальная полировка интерфейса ===== */
+
+/* убираем кнопку смены темы рядом с поиском */
+.darkmode {
+  display: none !important;
+}
+
+/* меняем Explorer на Навигация */
+.explorer h2 {
+  font-size: 0 !important;
+}
+
+.explorer h2::after {
+  content: "Навигация";
+  font-size: 1.35rem !important;
+  font-weight: 750 !important;
+  color: #111 !important;
+}
+
+/* делаем левую навигацию спокойнее */
+.explorer {
+  font-size: 0.92rem !important;
+  line-height: 1.45 !important;
+}
+
+.explorer a {
+  color: #1f4f9a !important;
+  text-decoration: none !important;
+}
+
+.explorer a:hover {
+  text-decoration: underline !important;
+}
+
+/* уменьшаем ощущение слипшегося текста */
+.article-title,
+.page-title,
+article h1 {
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+}
+
+article p,
+article li {
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+}
+
+article h2 {
+  margin-top: 2rem !important;
+  margin-bottom: 0.9rem !important;
+  padding-bottom: 0.35rem !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+/* блоки ссылок на главной делаем менее слипшимися */
+article a {
+  color: #1f5fbf !important;
+  font-weight: 600 !important;
+}
+
+article p a {
+  margin-right: 0.25rem !important;
+}
+
+/* правая колонка спокойнее */
+.graph,
+.backlinks,
+.toc {
+  border-radius: 14px !important;
+}
+
+/* убираем слишком техническое ощущение */
+body {
+  background: #ffffff !important;
+}
+
+/* Папки в навигации не ведут на страницы, работают только как раскрывающиеся разделы */
+.explorer .folder-title a,
+.explorer .folder-title a.internal {
+  pointer-events: none !important;
+  cursor: default !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Визуально папки выглядят как разделы, а не как ссылки */
+.explorer .folder-title {
+  cursor: pointer !important;
+}
+
+
+/* Папки в левом меню не должны открываться как страницы */
+.explorer a[href$="/"] {
+  pointer-events: none !important;
+  cursor: default !important;
+  color: #111827 !important;
+  text-decoration: none !important;
+}
+
+/* Стрелка раскрытия папки остается рабочей */
+.explorer svg,
+.explorer button,
+.explorer .folder-icon {
+  pointer-events: auto !important;
+}
+
+/* Визуально папки выглядят как разделы меню, а не как ссылки */
+.explorer a[href$="/"] {
+  font-weight: 700 !important;
+}
+
+/* Убираем кликабельность и перламутровый фон у тегов */
+article a[href^="/tags/"],
+article a[href*="/tags/"] {
+  pointer-events: none !important;
+  cursor: default !important;
+  text-decoration: none !important;
+  color: #334155 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Сам блок тегов делаем спокойным */
+article p:has(a[href^="/tags/"]),
+article p:has(a[href*="/tags/"]) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Убираем фиолетовые плашки у тегов */
+a.tag-link,
+.tag-link,
+.tags a,
+article a[href^="/tags/"],
+article a[href*="/tags/"] {
+  color: #1f5fbf !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+/* При наведении теги ведут себя как обычные аккуратные ссылки */
+a.tag-link:hover,
+.tag-link:hover,
+.tags a:hover,
+article a[href^="/tags/"]:hover,
+article a[href*="/tags/"]:hover {
+  color: #0f3f8f !important;
+  background: transparent !important;
+  text-decoration: underline !important;
+}
+
+/* Жесткая правка тегов - без фиолетового фона */
+article a[href^="/tags/"],
+article a[href*="/tags/"],
+a[href^="/tags/"],
+a[href*="/tags/"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #2563eb !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+/* Убираем фон у контейнеров, где Quartz иногда заворачивает теги */
+.tags,
+.tag,
+ul.tags,
+li.tag,
+p:has(a[href*="/tags/"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Чтобы теги выглядели как нормальные строки */
+article p:has(a[href*="/tags/"]) {
+  line-height: 1.55 !important;
+  margin-top: 0.4rem !important;
+}
+
+/* Финальная правка тегов: без фиолетового, без фона, без перехода на 404 */
+article a[href^="/tags/"],
+article a[href*="/tags/"],
+article .tags a,
+article .tag-link,
+article li.tag a,
+article p:has(a[href*="/tags/"]) a {
+  color: #111111 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+article a[href^="/tags/"]:hover,
+article a[href*="/tags/"]:hover {
+  color: #111111 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* --- Воздух и читабельность текста --- */
+
+article {
+  max-width: 760px !important;
+}
+
+article p {
+  font-size: 1.03rem !important;
+  line-height: 1.9 !important;
+  margin-top: 0.9rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+article li {
+  font-size: 1.03rem !important;
+  line-height: 1.85 !important;
+  margin-bottom: 0.45rem !important;
+}
+
+article h1 {
+  font-size: 2rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.4rem !important;
+}
+
+article h2 {
+  font-size: 1.45rem !important;
+  line-height: 1.3 !important;
+  margin-top: 2.4rem !important;
+  margin-bottom: 1.1rem !important;
+  padding-bottom: 0.55rem !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+article h3 {
+  margin-top: 2rem !important;
+  margin-bottom: 0.9rem !important;
+}
+
+article strong {
+  font-weight: 700 !important;
+}
+
+article hr {
+  margin: 2rem 0 !important;
+  border: none !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+/* чуть спокойнее теги */
+article a[href^="/tags/"],
+article a[href*="/tags/"] {
+  color: #374151 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+
+/* расстояние между хлебными крошками и заголовком */
+.breadcrumb-container,
+.breadcrumbs {
+  margin-bottom: 1.1rem !important;
+}
+
+article h1 {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.35rem !important;
+  line-height: 1.18 !important;
+}
+
+/* чуть больше воздуха после даты */
+.content-meta {
+  margin-bottom: 1.5rem !important;
+}
+
+/* основной текст спокойнее и читабельнее */
+article p {
+  margin-top: 0.9rem !important;
+  margin-bottom: 1.05rem !important;
+  line-height: 1.85 !important;
+}
+
+/* подзаголовки отделяем от текста */
+article h2,
+article h3 {
+  margin-top: 2.1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+
+/* корневой пункт Родовой архив в меню - без клика */
+.explorer a[href="/родовой-архив/"],
+.explorer a[href="/родовой-архив"] {
+  pointer-events: none !important;
+  cursor: default !important;
+  color: #111827 !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+/* Левый верхний логотип "Родовой архив" не должен вести как ссылка */
+.page-title,
+.page-title a,
+.page-title a:visited,
+.page-title a:hover {
+  color: #111827 !important;
+  text-decoration: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
