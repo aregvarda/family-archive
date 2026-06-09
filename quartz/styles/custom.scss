@@ -516,3 +516,24 @@ article h3 {
   pointer-events: none !important;
   cursor: default !important;
 }
+
+/* Принудительно раскрываем дерево навигации */
+.explorer .folder-outer {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+.explorer .folder-outer:not(.open) {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+.explorer .folder-container {
+  display: block !important;
+}
