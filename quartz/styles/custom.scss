@@ -516,3 +516,21 @@ article h3 {
   pointer-events: none !important;
   cursor: default !important;
 }
+
+/* Папки в навигации - черные, не как обычные синие ссылки */
+.explorer .folder-title,
+.explorer .folder-title a,
+.explorer li > a[href$="/"],
+.explorer a[href="/родовой-архив/"],
+.explorer a[href="/родовой-архив"] {
+  color: #111827 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+
+.explorer .folder-title:hover,
+.explorer .folder-title a:hover,
+.explorer li > a[href$="/"]:hover {
+  color: #111827 !important;
+  text-decoration: none !important;
+}
